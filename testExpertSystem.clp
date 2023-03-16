@@ -51,15 +51,23 @@
   (if (eq ?telectricity no)
     then (assert (techstack (name electricityno))))
 ) 
-(defrule tAi
+(defrule techAi
 (techstack(name htmlcssjsno))
     =>
   (printout t "do you learn something about neural network things? (yes or no)" crlf)
-  (bind ?tAi (read))
-  (if (eq ?tAi yes)
+  (bind ?techAi (read))
+  (if (eq ?techAi yes)
     then (printout t "ur job make me concern about my future, I hate AI developers" crlf))
-  (if (eq ?tAi no)
+  (if (eq ?techAi no)
     then (printout t "hmmmmm, r u even a programmer?" crlf))
 ) 
-
+(defrule additional
+    =>
+  (printout t "Do you hate AI? (yes or no)" crlf)
+  (bind ?hateAI (read))
+  (if (eq ?hateAI yes)
+    then (printout t "good job" crlf))
+  (if (eq ?hateAI no)
+    then (printout t "ewww, GPT fan?" crlf))
+) 
   
